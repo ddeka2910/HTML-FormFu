@@ -1,4 +1,3 @@
-use strict;
 package HTML::FormFu::Validator;
 # ABSTRACT: Validator Base Class
 
