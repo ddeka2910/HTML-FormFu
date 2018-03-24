@@ -1,6 +1,9 @@
-package HTML::FormFu::Validator;
+
 # ABSTRACT: Validator Base Class
 
+use strict;
+
+package HTML::FormFu::Validator;
 
 use Moose;
 extends 'HTML::FormFu::Processor';
