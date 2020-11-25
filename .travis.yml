@@ -1,3 +1,7 @@
+os: linux
+arch:
+ - amd64
+ - ppc64le
 language: perl
 perl:
   - "5.24"
@@ -21,8 +25,16 @@ before_install:
 matrix:
   allow_failures:
     - perl: blead       # ignore failures for blead perl
+    - perl: 5.12        # not available for ppc64le
+      arch: ppc64le
+    - perl: 5.10        # not available for ppc64le
+      arch: ppc64le
   include:
     - perl: "5.20"
+      env: COVERAGE=1   # enables coverage+coveralls reporting
+    #powerjobs  
+    - perl: "5.20"
+      arch: ppc64le
       env: COVERAGE=1   # enables coverage+coveralls reporting
 
 # end
